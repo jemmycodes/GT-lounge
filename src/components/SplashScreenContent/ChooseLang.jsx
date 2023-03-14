@@ -7,11 +7,22 @@ function ChooseLang() {
       <form className="flex flex-col justify-between gap-24 text-2xl ">
         <div className="flex justify-between">
           <div>
-            <input type="radio" id="english" name="language-btn" />
+            <input
+              type="radio"
+              id="english"
+              name="language-btn"
+              className="accent-orange"
+            />
             <label htmlFor="english">English</label>
           </div>
           <div>
-            <input type="radio" id="turkish" name="language-btn" />
+            <input
+              type="radio"
+              id="turkish"
+              name="language-btn"
+              checked
+              className="accent-orange"
+            />
             <label htmlFor="turkish">Turkish</label>
           </div>
         </div>
