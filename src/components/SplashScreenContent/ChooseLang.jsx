@@ -4,7 +4,7 @@ function ChooseLang() {
       <h1 className="text-3xl font-serif text-center w-full">
         Choose Language
       </h1>
-      <form className="flex flex-col  justify-between gap-24 text-2xl ">
+      <form className="flex flex-col justify-between gap-20 text-2xl ">
         <div className="flex justify-between">
           <div>
             <input type="radio" id="english" />
@@ -17,7 +17,7 @@ function ChooseLang() {
         </div>
         <button
           type="button"
-          className="text-white bg-orange py-3 mb-10  px-10 rounded-lg min-w-full"
+          className="text-white bg-orange py-3 mb-2 px-10 rounded-lg min-w-full"
         >
           Proceed
         </button>
