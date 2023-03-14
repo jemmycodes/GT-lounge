@@ -1,6 +1,6 @@
 function ChooseLang() {
   return (
-    <section className="choose-language-card w-full flex flex-col justify-center gap-10 p-5 text-white">
+    <section className="choose-language-card w-full flex flex-col justify-center gap-6 p-5 text-white">
       <h1 className="text-3xl font-serif text-center w-full">
         Choose Language
       </h1>
@@ -17,7 +17,7 @@ function ChooseLang() {
         </div>
         <button
           type="button"
-          className="text-white bg-orange py-3 mb-2 px-10 rounded-lg min-w-full"
+          className="text-white bg-orange py-2 mb-2 px-10 rounded-lg min-w-full"
         >
           Proceed
         </button>
