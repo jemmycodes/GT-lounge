@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+figcaption {
+  -webkit-text-fill-color: transparent;
+}
+
+.top-blur-gradient {
+  box-shadow: 0px 70px 50px rgba(255, 104, 56, 0.3);
+}
+
+.choose-language-card {
+  background: linear-gradient(
+    180deg,
+    rgba(48, 47, 60, 0.8) 0.44%,
+    rgba(0, 0, 0, 0.8) 65.65%
+  );
+  box-shadow: 0px 3.73118px 37.3118px 7.46237px rgba(255, 104, 56, 0.2);
+  border-radius: 48px 48px 0px 0px;
+}
+
+@layer base {
+  section form div {
+    @apply flex gap-4 items-center;
+  }
+}
