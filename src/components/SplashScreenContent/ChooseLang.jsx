@@ -17,7 +17,7 @@ function ChooseLang() {
         </div>
         <button
           type="button"
-          className="text-white bg-orange py-3 px-10 rounded-lg min-w-full"
+          className="text-white bg-orange py-3 mb-10  px-10 rounded-lg min-w-full"
         >
           Proceed
         </button>
