@@ -22,13 +22,16 @@ const menuList = [
   },
 ];
 
-function ChooseMenu() {
+function ChooseMenu({ language }) {
+  const menuStyle = `menu-card-style ${
+    !language ? "left-0 duration-700 delay-200  " : ""
+  }`;
   return (
-    <ul className=" w-full mb-20 p-4 flex flex-col gap-4">
+    <ul className={menuStyle}>
       {menuList.map((menu, index) => (
         <li
           key={index}
-          className="cursor-pointer flex justify-between items-center menu-items p-5 w-full"
+          className="cursor-pointer  flex justify-between items-center menu-items p-5 w-full"
         >
           <span className="flex text-xl gap-5">
             {menu.icon}

@@ -6,6 +6,7 @@ html,
 body,
 #root {
   height: 100%;
+  overflow: hidden;
 }
 
 .menu-items {
@@ -34,5 +35,17 @@ figcaption {
 @layer base {
   section form div {
     @apply flex gap-4 items-center;
+  }
+
+  .translate-out {
+    @apply -translate-x-[100vw] duration-700;
+  }
+
+  .card-language-design {
+    @apply choose-language-card w-full flex flex-col justify-center gap-6 p-5 text-white;
+  }
+
+  .menu-card-style {
+    @apply w-full mb-20 p-4 flex flex-col gap-4 absolute bottom-0 left-[100vw];
   }
 }
