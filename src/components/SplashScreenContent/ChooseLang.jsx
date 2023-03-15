@@ -1,4 +1,4 @@
-function ChooseLang() {
+function ChooseLang({ setShowLang }) {
   return (
     <section className="choose-language-card w-full flex flex-col justify-center gap-6 p-5 text-white">
       <h1 className="text-3xl font-serif text-center w-full">
@@ -20,8 +20,9 @@ function ChooseLang() {
               type="radio"
               id="turkish"
               name="language-btn"
-              checked
+              // checked
               className="accent-orange"
+              defaultChecked
             />
             <label htmlFor="turkish">Turkish</label>
           </div>
@@ -29,6 +30,7 @@ function ChooseLang() {
         <button
           type="button"
           className="text-white bg-orange py-3 mb-5 px-10 rounded-lg min-w-full"
+          onClick={() => setShowLang((prevState) => !prevState)}
         >
           Proceed
         </button>

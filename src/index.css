@@ -8,6 +8,11 @@ body,
   height: 100%;
 }
 
+.menu-items {
+  background: linear-gradient(90.08deg, pink 52.81%, #ff6838 105.95%);
+  border-radius: 8px;
+}
+
 figcaption {
   -webkit-text-fill-color: transparent;
 }
