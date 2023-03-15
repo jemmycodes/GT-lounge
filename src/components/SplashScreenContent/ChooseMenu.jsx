@@ -30,7 +30,7 @@ function ChooseMenu() {
           key={index}
           className="cursor-pointer flex justify-between items-center menu-items p-5 w-full"
         >
-          <span className="flex text-3xl gap-5">
+          <span className="flex text-xl gap-5">
             {menu.icon}
             {menu.name}
           </span>
