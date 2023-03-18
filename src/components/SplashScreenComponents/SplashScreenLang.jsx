@@ -15,7 +15,7 @@ function SplashScreenLang() {
               className="accent-gold"
               value="English"
             />
-            <label for="english">English</label>
+            <label htmlFor="english">English</label>
           </div>
           <div>
             <input
@@ -26,7 +26,7 @@ function SplashScreenLang() {
               className="accent-gold"
               defaultChecked
             />
-            <label for="turkish">Turkish</label>
+            <label htmlFor="turkish">Turkish</label>
           </div>
         </div>
         <button

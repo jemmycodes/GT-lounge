@@ -27,13 +27,17 @@ body,
   );
 }
 
+.language-card {
+  animation-fill-mode: forwards;
+}
+
 @layer base {
   .splash-bg-blur {
     @apply bg-blend-soft-light mix-blend-soft-light px-36 py-20;
   }
 
   .language-card {
-    @apply bg-lang-card-color overflow-hidden w-full text-white backdrop-blur-[5.3653px] border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col;
+    @apply bg-lang-card-color animate-slideInFromButtom overflow-hidden w-full text-white backdrop-blur-[5.3653px] border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col;
   }
 
   hgroup form div {
