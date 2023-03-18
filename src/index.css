@@ -37,6 +37,6 @@ body,
   }
 
   hgroup form div {
-    @apply flex gap-4 justify-between text-lg;
+    @apply flex gap-4 justify-between text-lg items-center;
   }
 }

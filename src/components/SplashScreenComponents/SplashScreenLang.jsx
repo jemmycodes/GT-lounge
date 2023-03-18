@@ -13,18 +13,20 @@ function SplashScreenLang() {
               name="choose-lang"
               id="english"
               className="accent-gold"
-              defaultChecked
+              value="English"
             />
-            <label id="english">English</label>
+            <label for="english">English</label>
           </div>
           <div>
             <input
               id="turkish"
               type="radio"
               name="choose-lang"
+              value="Turkish"
               className="accent-gold"
+              defaultChecked
             />
-            <label id="turkish">Turkish</label>
+            <label for="turkish">Turkish</label>
           </div>
         </div>
         <button
