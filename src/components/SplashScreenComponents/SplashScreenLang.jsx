@@ -1,11 +1,11 @@
 function SplashScreenLang() {
   return (
-    <hrgoup className="language-card ">
-      <div className="splash-bg-blur absolute bottom-0 -left-36 "></div>
+    <hgroup className="language-card ">
+      <div className="splash-bg-blur absolute bottom-0 -left-36 overflow-hidden "></div>
       <h1 className="text-white text-lg text-center">
         Choose a language to continue
       </h1>
-      <form className="flex  flex-col gap-12">
+      <form className="flex  flex-col gap-20">
         <div>
           <div>
             <input
@@ -34,7 +34,7 @@ function SplashScreenLang() {
           Proceed
         </button>
       </form>
-    </hrgoup>
+    </hgroup>
   );
 }
 export default SplashScreenLang;

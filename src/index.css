@@ -33,10 +33,10 @@ body,
   }
 
   .language-card {
-    @apply bg-lang-card-color w-full text-white backdrop-blur-[5.3653px] border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col;
+    @apply bg-lang-card-color overflow-hidden w-full text-white backdrop-blur-[5.3653px] border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col;
   }
 
-  hrgoup form div {
+  hgroup form div {
     @apply flex gap-4 justify-between text-lg;
   }
 }
