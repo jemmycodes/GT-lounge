@@ -4,14 +4,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "splash-screen": "url('./assets/splash-screen-bg.webp')",
+        "club-bg-splash-screen": "url('./assets/bar-bg.svg')",
       },
       colors: {
-        orange: "rgba(255, 104, 56, 1)",
+        bgBlack: "#121212",
+        gold: "#EEC865",
+        "lang-card-color": "#1e1e22;",
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        sans: ["Raleway", "sans-serif"],
+        sans: ["Poppins", "sans-serif"],
       },
     },
   },

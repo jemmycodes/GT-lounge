@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,43 +11,30 @@ body,
   overflow: hidden;
 }
 
-.menu-items {
-  background: linear-gradient(90.08deg, pink 52.81%, #ff6838 105.95%);
-  border-radius: 8px;
-}
-
-figcaption {
-  -webkit-text-fill-color: transparent;
-}
-
-.top-blur-gradient {
-  box-shadow: 0px 70px 50px rgba(255, 104, 56, 0.3);
-}
-
-.choose-language-card {
-  background: linear-gradient(
-    180deg,
-    rgba(48, 47, 60, 0.8) 0.44%,
-    rgba(0, 0, 0, 0.8) 65.65%
+.splash-bg-blur {
+  background: radial-gradient(
+    49.87% 49.82% at 48.88% 49.14%,
+    #eec865 0%,
+    rgba(238, 200, 101, 0.98) 10%,
+    rgba(238, 200, 101, 0.92) 22%,
+    rgba(238, 200, 101, 0.81) 36%,
+    rgba(238, 200, 101, 0.67) 51%,
+    rgba(238, 200, 101, 0.48) 67%,
+    rgba(238, 200, 101, 0.26) 83%,
+    rgba(238, 200, 101, 0) 100%
   );
-  box-shadow: 0px 3.73118px 37.3118px 7.46237px rgba(255, 104, 56, 0.2);
-  border-radius: 48px 48px 0px 0px;
 }
 
 @layer base {
-  section form div {
-    @apply flex gap-4 items-center;
+  .splash-bg-blur {
+    @apply bg-blend-soft-light mix-blend-soft-light px-36 py-20;
   }
 
-  .translate-out {
-    @apply -translate-x-[100vw] duration-700;
+  .language-card {
+    @apply bg-lang-card-color w-full text-white backdrop-blur-[5.3653px] border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col;
   }
 
-  .card-language-design {
-    @apply choose-language-card w-full flex flex-col justify-center gap-6 p-5 text-white;
-  }
-
-  .menu-card-style {
-    @apply w-full mb-20 p-4 flex flex-col gap-4 absolute bottom-0 left-[100vw];
+  hrgoup form div {
+    @apply flex gap-4 justify-between text-lg;
   }
 }

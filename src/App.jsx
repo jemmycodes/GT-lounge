@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
+import SplashScreen from "./pages/SplashScreen";
 import NotFound from "./pages/NotFound";
 
 const routes = createBrowserRouter([
-  { path: "/", element: <LandingPage />, errorElement: <NotFound /> },
+  { path: "/", element: <SplashScreen />, errorElement: <NotFound /> },
 ]);
 
 function App() {
