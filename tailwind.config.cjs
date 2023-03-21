@@ -23,7 +23,7 @@ module.exports = {
       keyframes: {
         slideInFromRight: {
           "0%": {
-            transform: "translateX(100vw)",
+            transform: "translateX(100%)",
             display: "none",
           },
 
@@ -37,7 +37,7 @@ module.exports = {
         },
         slideInFromLeft: {
           "0%": {
-            transform: "translateX(-100vw)",
+            transform: "translateX(-100%)",
             display: "none",
           },
 
@@ -51,7 +51,7 @@ module.exports = {
         },
         slideInFromButtom: {
           "0%": {
-            transform: "translateY(100vh)",
+            transform: "translateY(100%)",
           },
           "100%": {
             transform: "translateY(0)",
@@ -59,7 +59,7 @@ module.exports = {
         },
         slideAndScale: {
           "0%": {
-            transform: "translateY(-100vh) scale(1.3)",
+            transform: "translateY(-100%) scale(1.3)",
             // transform: "scale(1.3)",
           },
           "100%": {

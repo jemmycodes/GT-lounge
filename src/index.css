@@ -4,12 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background-color: red;
+}
+
+#root {
+  background-color: blue;
+}
+
+body {
+  background-color: blueviolet;
+}
+
 body,
 html,
 #root {
   height: 100%;
   overflow: hidden;
-  background-color: red;
 }
 
 .splash-bg-blur {
