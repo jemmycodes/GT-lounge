@@ -24,11 +24,6 @@ module.exports = {
         slideInFromRight: {
           "0%": {
             transform: "translateX(100%)",
-            display: "none",
-          },
-
-          "99%": {
-            display: "block",
           },
 
           "100%": {
@@ -38,11 +33,6 @@ module.exports = {
         slideInFromLeft: {
           "0%": {
             transform: "translateX(-100%)",
-            display: "none",
-          },
-
-          "99%": {
-            display: "block",
           },
 
           "100%": {
@@ -60,7 +50,6 @@ module.exports = {
         slideAndScale: {
           "0%": {
             transform: "translateY(-100%) scale(1.3)",
-            // transform: "scale(1.3)",
           },
           "100%": {
             transform: "translateY(0)",
