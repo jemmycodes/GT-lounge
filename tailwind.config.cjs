@@ -59,11 +59,12 @@ module.exports = {
         },
         slideAndScale: {
           "0%": {
-            transform: "translateY(-100vh)",
+            transform: "translateY(-100vh) scale(1.3)",
+            // transform: "scale(1.3)",
           },
           "100%": {
             transform: "translateY(0)",
-            transform: "scale(1.3)",
+            transform: "scale(1)",
           },
         },
       },

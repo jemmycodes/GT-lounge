@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { RadioBtns } from "../index";
+
 function SplashScreenLang() {
+  const [language, setLanguage] = useState("turkish");
+
   return (
     <hgroup className="language-card ">
       <div className="splash-bg-blur absolute bottom-0 -left-36 overflow-hidden "></div>
@@ -7,31 +12,20 @@ function SplashScreenLang() {
       </h1>
       <form className="flex  flex-col gap-20">
         <div>
-          <div>
-            <input
-              type="radio"
-              name="choose-lang"
-              id="english"
-              className="accent-gold"
-              value="English"
-            />
-            <label htmlFor="english">English</label>
-          </div>
-          <div>
-            <input
-              id="turkish"
-              type="radio"
-              name="choose-lang"
-              value="Turkish"
-              className="accent-gold"
-              defaultChecked
-            />
-            <label htmlFor="turkish">Turkish</label>
-          </div>
+          <RadioBtns
+            id="english"
+            value="English"
+            onClick={() => setLanguage("english")}
+          />
+          <RadioBtns
+            id="turkish"
+            value="Turkish"
+            onClick={() => setLanguage("turkish")}
+          />
         </div>
         <button
           type="submit"
-          className="bg-gold text-white text-lg` py-2 rounded-3xl"
+          className="bg-gold text-white text-lg py-2 rounded-3xl"
         >
           Proceed
         </button>
