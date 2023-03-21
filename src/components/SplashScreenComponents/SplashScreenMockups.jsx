@@ -7,15 +7,16 @@ function SplashScreenMockups() {
       <img
         src={manAtBar}
         alt="Man drinking at a bar"
-        className="absolute -translate-y-1/2 top-1/2 left-6 animate-slideInFromLeft"
+        className="absolute top-1/2 -translate-y-1/2 left-4"
       />
       <img
         src={girlAtBar}
         alt="Girl drinking at a bar"
-        className="absolute -translate-y-1/2 top-1/2 right-6 animate-slideInFromRight"
+        className="absolute  right-4 top-1/2 -translate-y-1/2"
       />
     </figure>
   );
 }
 
 export default SplashScreenMockups;
+// className = "absolute";
