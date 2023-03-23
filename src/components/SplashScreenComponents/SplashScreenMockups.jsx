@@ -3,16 +3,16 @@ import manAtBar from "../../assets/man-at-bar.svg";
 
 function SplashScreenMockups() {
   return (
-    <figure className="overflow-hidden">
+    <figure className="max-w-full overflow-hidden">
       <img
         src={manAtBar}
         alt="Man drinking at a bar"
-        className="custom-animation-classes"
+        className="animate-slideInFromLeft overflow-hidden custom-animation-classes"
       />
       <img
         src={girlAtBar}
         alt="Girl drinking at a bar"
-        className=" custom-animation-classes "
+        className=" animate-slideInFromRight overflow-hidden custom-animation-classes "
       />
     </figure>
   );

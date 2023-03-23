@@ -6,7 +6,7 @@ function SplashScreenBg({ children }) {
       <figure className=" scale-100 delay-1000">
         <img src={logo} alt="logo" width={170} height={50} />
       </figure>
-      <div className="splash-bg-blur  overflow-hidden -translate-y-8  translate-x-[60%] "></div>
+      <div className="splash-bg-blur absolute top-4 right-0 overflow-hidden"></div>
       {children}
     </section>
   );

@@ -5,12 +5,17 @@
 @tailwind utilities;
 
 body,
+html {
+  overflow: hidden;
+}
+
+body,
 html,
 #root {
   height: 100%;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .splash-bg-blur {
@@ -33,7 +38,7 @@ html,
 
 @layer base {
   .splash-bg-blur {
-    @apply bg-blend-soft-light mix-blend-soft-light px-36 py-20;
+    @apply bg-blend-soft-light mix-blend-soft-light px-20 py-12;
   }
 
   .language-card {
