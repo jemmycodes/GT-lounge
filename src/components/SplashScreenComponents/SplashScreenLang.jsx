@@ -8,7 +8,7 @@ function SplashScreenLang({ onShowMenu }) {
   useEffect(() => localStorage.setItem("language", language), [language]);
 
   return (
-    <hgroup className="language-card">
+    <hgroup className="language-card overflow-hidden">
       <div className="splash-bg-blur absolute  -bottom-4 -left-28 overflow-hidden "></div>
       <h1 className="text-white text-lg text-center">
         Choose a language to continue
