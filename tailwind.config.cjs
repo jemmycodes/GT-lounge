@@ -63,6 +63,16 @@ module.exports = {
             transform: "scale(1)",
           },
         },
+        growingLightBlur: {
+          "0%": {
+            width: "0px",
+            height: "0px",
+          },
+          "100px": {
+            width: "300px",
+            height: "220px",
+          },
+        },
       },
     },
   },
