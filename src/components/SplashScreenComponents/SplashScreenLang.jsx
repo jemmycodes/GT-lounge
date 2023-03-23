@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { RadioBtns } from "../index";
+import { RadioBtns } from "..";
+
+const data = [
+  { value: "English", id: "english" },
+  { value: "Turkish", id: "turkish" },
+];
 
 function SplashScreenLang() {
   const [language, setLanguage] = useState("turkish");
@@ -12,16 +17,15 @@ function SplashScreenLang() {
       </h1>
       <form className="flex  flex-col gap-20">
         <div>
-          <RadioBtns
-            id="english"
-            value="English"
-            onClick={() => setLanguage("english")}
-          />
-          <RadioBtns
-            id="turkish"
-            value="Turkish"
-            onClick={() => setLanguage("turkish")}
-          />
+          {data.map(({ id, value }) => (
+            <RadioBtns
+              language={language}
+              id={id}
+              key={id}
+              value={value}
+              onLanguageChange={() => setLanguage(id)}
+            />
+          ))}
         </div>
         <button
           type="submit"
