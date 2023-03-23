@@ -23,7 +23,8 @@ module.exports = {
       keyframes: {
         slideInFromRight: {
           "0%": {
-            transform: "translateX(100%)",
+            transform: "translate(100%, 50%)",
+            position: "",
           },
 
           "100%": {
