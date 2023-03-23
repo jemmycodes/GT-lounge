@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -38,14 +38,18 @@ html,
 
 @layer base {
   .splash-bg-blur {
-    @apply bg-blend-soft-light mix-blend-soft-light px-20 py-12;
+    @apply bg-blend-soft-light mix-blend-soft-light px-32 py-20;
   }
 
   .language-card {
-    @apply bg-lang-card-color overflow-hidden w-full text-white backdrop-blur-[5.3653px] border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col;
+    @apply bg-lang-card-color overflow-hidden w-full text-white backdrop-blur-xl border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col animate-slideInFromButtom;
   }
 
   hgroup form div {
     @apply flex gap-4 justify-between text-lg items-center;
+  }
+
+  .menu-items-splash-screen {
+    @apply bg-menu-bg rounded-2xl text-gold border-[#34374b] border backdrop-blur-md p-4;
   }
 }

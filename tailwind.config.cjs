@@ -16,6 +16,7 @@ module.exports = {
         bgBlack: "#121212",
         gold: "#EEC865",
         "lang-card-color": "#1e1e22;",
+        "menu-bg": " rgba(78,78,97,0.2);",
       },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
@@ -45,23 +46,23 @@ module.exports = {
             top: "50%",
           },
         },
-        // slideInFromButtom: {
-        //   "0%": {
-        //     transform: "translateY(100%)",
-        //   },
-        //   "100%": {
-        //     transform: "translateY(0)",
-        //   },
-        // },
-        // slideAndScale: {
-        //   "0%": {
-        //     transform: "translateY(-100%) scale(1.3)",
-        //   },
-        //   "100%": {
-        //     transform: "translateY(0)",
-        //     transform: "scale(1)",
-        //   },
-        // },
+        slideInFromButtom: {
+          "0%": {
+            transform: "translateY(100%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
+        slideAndScale: {
+          "0%": {
+            transform: "translateY(-100%) scale(1.3)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            transform: "scale(1)",
+          },
+        },
       },
     },
   },
