@@ -49,6 +49,6 @@ html,
   }
 
   .menu-items-splash-screen {
-    @apply bg-menu-bg rounded-2xl text-gold border-[#34374b] border backdrop-blur-md p-4;
+    @apply bg-menu-bg rounded-2xl text-gold border-[#34374b] border backdrop-blur-md px-4 py-2;
   }
 }
