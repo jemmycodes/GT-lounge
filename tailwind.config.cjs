@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        slideInFromRight: "slideInFromRight 1.5s ease",
-        slideInFromLeft: "slideInFromLeft 1.5s ease",
+        slideInFromRight: "slideInFromRight 1s ease",
+        slideInFromLeft: "slideInFromLeft 1s ease",
         slideInFromButtom: "slideInFromButtom 1s ease",
         slideAndScale: "slideAndScale 2s ease",
       },
@@ -23,40 +23,45 @@ module.exports = {
       keyframes: {
         slideInFromRight: {
           "0%": {
-            transform: "translate(100%, 50%)",
-            position: "",
+            transform: "translate(100%,-50%)",
+            position: "absolute",
+            top: "50%",
           },
-
           "100%": {
-            transfrom: "translateX(0)",
+            transform: "translate(-5%,-50%)",
+            position: "absolute",
+            top: "50%",
           },
         },
         slideInFromLeft: {
           "0%": {
-            transform: "translateX(-100%)",
-          },
-
-          "100%": {
-            transfrom: "translateX(0)",
-          },
-        },
-        slideInFromButtom: {
-          "0%": {
-            transform: "translateY(100%)",
+            transform: "translate(-150%,-50%)",
+            position: "absolute",
+            top: "50%",
           },
           "100%": {
-            transform: "translateY(0)",
+            transform: "translate(-95%,-50%)",
+            position: "absolute",
+            top: "50%",
           },
         },
-        slideAndScale: {
-          "0%": {
-            transform: "translateY(-100%) scale(1.3)",
-          },
-          "100%": {
-            transform: "translateY(0)",
-            transform: "scale(1)",
-          },
-        },
+        // slideInFromButtom: {
+        //   "0%": {
+        //     transform: "translateY(100%)",
+        //   },
+        //   "100%": {
+        //     transform: "translateY(0)",
+        //   },
+        // },
+        // slideAndScale: {
+        //   "0%": {
+        //     transform: "translateY(-100%) scale(1.3)",
+        //   },
+        //   "100%": {
+        //     transform: "translateY(0)",
+        //     transform: "scale(1)",
+        //   },
+        // },
       },
     },
   },

@@ -4,18 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  background-color: red;
-}
-
-#root {
-  background-color: blue;
-}
-
-body {
-  background-color: blueviolet;
-}
-
 body,
 html,
 #root {
@@ -37,7 +25,7 @@ html,
   );
 }
 
-.language-card {
+.custom-animation-classes {
   animation-fill-mode: forwards;
 }
 
