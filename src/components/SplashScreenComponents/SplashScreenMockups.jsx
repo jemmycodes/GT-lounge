@@ -7,12 +7,12 @@ function SplashScreenMockups() {
       <img
         src={manAtBar}
         alt="Man drinking at a bar"
-        className="animate-slideInFromLeft custom-animation-classes"
+        className="custom-animation-classes"
       />
       <img
         src={girlAtBar}
         alt="Girl drinking at a bar"
-        className=" animate-slideInFromRight custom-animation-classes "
+        className=" custom-animation-classes "
       />
     </figure>
   );
