@@ -44,6 +44,10 @@ html,
     @apply bg-lang-card-color overflow-hidden w-full text-white backdrop-blur-xl border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col animate-slideInFromButtom;
   }
 
+  .language-card-outro {
+    @apply bg-lang-card-color overflow-hidden w-full text-white backdrop-blur-xl border-[#34374b] border rounded-t-[40px] p-5 font-semibold flex gap-5 flex-col animate-slideToButtom custom-animation-classes;
+  }
+
   hgroup form div {
     @apply flex gap-4 justify-between text-lg items-center;
   }

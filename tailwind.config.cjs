@@ -8,9 +8,14 @@ module.exports = {
         slideInFromLeft: "slideInFromLeft 1s ease",
         slideInFromButtom: "slideInFromButtom 1s ease",
         slideAndScale: "slideAndScale 2s ease",
+        slideToButtom: "slideToButtom 1s ease",
+        slideOutToleft: "slideOutToleft 1s ease",
+        slideOutToRight: "slideOutToRight 1s ease",
+        fadeIn: "fadeIn 2.5s ease",
       },
       backgroundImage: {
         "club-bg-splash-screen": "url('./assets/bar-bg.svg')",
+        "bar-bg": "url('./assets/bar.svg')",
       },
       colors: {
         bgBlack: "#121212",
@@ -71,6 +76,46 @@ module.exports = {
           "100px": {
             width: "300px",
             height: "220px",
+          },
+        },
+        slideToButtom: {
+          "0%": {
+            transform: "translateY(0%)",
+          },
+          "100%": {
+            transform: "translateY(100%)",
+          },
+        },
+        slideOutToleft: {
+          "0%": {
+            transform: "translate(-95%,-50%)",
+            position: "absolute",
+            top: "50%",
+          },
+          "100%": {
+            transform: "translate(-200%,-50%)",
+            position: "absolute",
+            top: "50%",
+          },
+        },
+        slideOutToRight: {
+          "0%": {
+            transform: "translate(-5%,-50%)",
+            position: "absolute",
+            top: "50%",
+          },
+          "100%": {
+            transform: "translate(100%,-50%)",
+            position: "absolute",
+            top: "50%",
+          },
+        },
+        fadeIn: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
           },
         },
       },

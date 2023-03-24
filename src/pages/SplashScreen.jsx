@@ -15,16 +15,11 @@ function SplashScreen() {
   };
 
   return (
-    <SplashScreenBg>
-      {!showMenu ? (
-        <>
-          <SplashScreenLogo />
-          <SplashScreenMockups />
-          <SplashScreenLang showMenu={showMenu} onShowMenu={handleShowMenu} />
-        </>
-      ) : (
-        <SplashScreenMenu />
-      )}
+    <SplashScreenBg showMenu={showMenu}>
+      <SplashScreenLogo />
+      <SplashScreenMockups showMenu={showMenu} />
+      <SplashScreenLang showMenu={showMenu} onShowMenu={handleShowMenu} />
+      <SplashScreenMenu showMenu={showMenu} />
     </SplashScreenBg>
   );
 }
