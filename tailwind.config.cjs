@@ -41,7 +41,7 @@ module.exports = {
         },
         slideInFromLeft: {
           "0%": {
-            transform: "translate(-150%,-50%)",
+            transform: "translate(-100vw,-50%)",
             position: "absolute",
             top: "50%",
           },
@@ -88,26 +88,27 @@ module.exports = {
         },
         slideOutToleft: {
           "0%": {
-            transform: "translate(-95%,-50%)",
+            transform: "translate(-10vw,-50%)",
             position: "absolute",
             top: "50%",
           },
           "100%": {
-            transform: "translate(-200%,-50%)",
+            transform: "translate(-100vw,-50%)",
             position: "absolute",
             top: "50%",
           },
         },
         slideOutToRight: {
           "0%": {
-            transform: "translate(-5%,-50%)",
+            transform: "translate(-5vw,-50%)",
             position: "absolute",
             top: "50%",
           },
           "100%": {
-            transform: "translate(100%,-50%)",
+            transform: "translate(100vw,-50%)",
             position: "absolute",
             top: "50%",
+            display: "hidden",
           },
         },
         fadeIn: {

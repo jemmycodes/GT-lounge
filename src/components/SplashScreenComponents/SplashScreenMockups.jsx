@@ -3,7 +3,7 @@ import manAtBar from "../../assets/man-at-bar.svg";
 
 function SplashScreenMockups({ showMenu }) {
   return (
-    <figure className="max-w-full overflow-hidden">
+    <figure className=" overflow-hidden">
       <img
         src={manAtBar}
         alt="Man drinking at a bar"
