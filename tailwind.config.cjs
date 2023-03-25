@@ -11,7 +11,7 @@ module.exports = {
         slideToButtom: "slideToButtom 1s ease",
         slideOutToleft: "slideOutToleft 1s ease",
         slideOutToRight: "slideOutToRight 1s ease",
-        fadeIn: "fadeIn 2.5s ease",
+        fadeIn: "fadeIn 4s ease",
       },
       backgroundImage: {
         "club-bg-splash-screen": "url('./assets/bar-bg.svg')",
@@ -88,7 +88,7 @@ module.exports = {
         },
         slideOutToRight: {
           "0%": {
-            transform: "translate(95vw,-70%)",
+            transform: "translate(55vw,-70%)",
           },
           "100%": {
             transform: "translate(100vw,-70%)",
