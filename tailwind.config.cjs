@@ -29,26 +29,18 @@ module.exports = {
       keyframes: {
         slideInFromRight: {
           "0%": {
-            transform: "translate(100%,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(100vw,-70%)",
           },
           "100%": {
-            transform: "translate(-5%,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(55vw,-70%)",
           },
         },
         slideInFromLeft: {
           "0%": {
-            transform: "translate(-100vw,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(-100vw,30%)",
           },
           "100%": {
-            transform: "translate(-95%,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(5vw,30%)",
           },
         },
         slideInFromButtom: {
@@ -88,27 +80,18 @@ module.exports = {
         },
         slideOutToleft: {
           "0%": {
-            transform: "translate(-10vw,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(5vw,30%)",
           },
           "100%": {
-            transform: "translate(-100vw,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(-100vw,30%)",
           },
         },
         slideOutToRight: {
           "0%": {
-            transform: "translate(-5vw,-50%)",
-            position: "absolute",
-            top: "50%",
+            transform: "translate(95vw,-70%)",
           },
           "100%": {
-            transform: "translate(100vw,-50%)",
-            position: "absolute",
-            top: "50%",
-            display: "hidden",
+            transform: "translate(100vw,-70%)",
           },
         },
         fadeIn: {
