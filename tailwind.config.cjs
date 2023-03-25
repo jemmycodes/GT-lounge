@@ -29,18 +29,18 @@ module.exports = {
       keyframes: {
         slideInFromRight: {
           "0%": {
-            transform: "translate(100vw,-70%)",
+            transform: "translateX(100vw)",
           },
           "100%": {
-            transform: "translate(55vw,-70%)",
+            transform: "translateX(-5vw)",
           },
         },
         slideInFromLeft: {
           "0%": {
-            transform: "translate(-100vw,30%)",
+            transform: "translateX(-100vw)",
           },
           "100%": {
-            transform: "translate(5vw,30%)",
+            transform: "translateX(5vw)",
           },
         },
         slideInFromButtom: {
@@ -57,7 +57,6 @@ module.exports = {
           },
           "100%": {
             transform: "translateY(0)",
-            transform: "scale(1)",
           },
         },
         growingLightBlur: {
@@ -80,18 +79,18 @@ module.exports = {
         },
         slideOutToleft: {
           "0%": {
-            transform: "translate(5vw,30%)",
+            transform: "translateX(5vw)",
           },
           "100%": {
-            transform: "translate(-100vw,30%)",
+            transform: "translateX(-100vw)",
           },
         },
         slideOutToRight: {
           "0%": {
-            transform: "translate(55vw,-70%)",
+            transform: "translateX(-5vw)",
           },
           "100%": {
-            transform: "translate(100vw,-70%)",
+            transform: "translateX(100vw)",
           },
         },
         fadeIn: {

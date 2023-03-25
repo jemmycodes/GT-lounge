@@ -10,15 +10,15 @@ function SplashScreenLang({ onShowMenu, showMenu }) {
   return (
     <hgroup
       className={
-        !showMenu ? "language-card absolute bottom-0" : "language-card-outro"
+        !showMenu ? "language-card bottom-0 absolute" : "language-card-outro"
       }
     >
       <div className="splash-bg-blur absolute  -bottom-4 -left-28 overflow-hidden "></div>
-      <h1 className="text-white text-lg text-center">
+      <h1 className="text-white text-base text-center">
         Choose a language to continue
       </h1>
       <form
-        className="flex  flex-col gap-20"
+        className="flex  flex-col gap-16"
         onSubmit={(e) => e.preventDefault()}
       >
         <div>
