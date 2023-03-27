@@ -5,3 +5,5 @@ export { default as SplashScreenMenu } from "./SplashScreenComponents/SplashScre
 export { default as SplashScreenLogo } from "./SplashScreenComponents/SplashScreenLogo";
 export { default as SplashScreenMockups } from "./SplashScreenComponents/SplashScreenMockups";
 export { default as SplashScreenLang } from "./SplashScreenComponents/SplashScreenLang";
+export { default as Category } from "../components/home/Categories/Category";
+export { default as Categories } from "../components/home/Categories/Categories";

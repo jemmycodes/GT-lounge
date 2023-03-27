@@ -32,6 +32,15 @@ html,
   animation-fill-mode: forwards;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @layer base {
   .splash-bg-blur {
     @apply bg-blend-soft-light mix-blend-soft-light px-32 py-20;
@@ -51,5 +60,13 @@ html,
 
   .menu-items-splash-screen {
     @apply bg-menu-bg rounded-2xl text-gold border-[#34374b] border backdrop-blur-md px-4 py-2;
+  }
+
+  .menu-link {
+    @apply flex min-w-fit gap-3 border-gold border text-gold px-3 py-2 rounded-full font-semibold;
+  }
+
+  .active-link {
+    @apply bg-gold border-none text-bgBlack;
   }
 }
