@@ -3,7 +3,7 @@ import { Category } from "../../index";
 
 const Categories = () => {
   return (
-    <ul className="flex gap-5  overflow-x-scroll hide-scrollbar">
+    <ul className=" hide-scrollbar">
       {menuData.map(({ type, icon }) => (
         <Category key={type} icon={icon} type={type} />
       ))}
