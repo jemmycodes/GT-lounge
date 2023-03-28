@@ -3,11 +3,21 @@ import SplashScreen from "./pages/SplashScreen";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import Menu from "./pages/Menu";
 
 const routes = createBrowserRouter([
   { path: "/", element: <SplashScreen />, errorElement: <NotFound /> },
-  { path: "/home", element: <Home /> },
-  { path: "/cart", element: <Cart /> },
+  {
+    path: "menu",
+    element: <Home />,
+    children: [
+      {
+        path: ":type",
+        element: <Menu />,
+      },
+    ],
+  },
+  { path: "cart", element: <Cart /> },
 ]);
 
 function App() {

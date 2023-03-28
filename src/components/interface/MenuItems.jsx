@@ -2,8 +2,9 @@ import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 function MenuItems({ menu, icon }) {
+  const href = menu.toLowerCase();
   return (
-    <Link to="home" className="menu-items-splash-screen">
+    <Link to={`menu/${href}`} className="menu-items-splash-screen">
       <div className="flex font-medium text-lg justify-between items-center gap-4">
         <span className="flex items-center gap-3">
           <img src={icon} alt="" width={50} height={50} />
