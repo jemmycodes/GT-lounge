@@ -1,12 +1,18 @@
 import { Categories } from "../components";
 import { MdKeyboardBackspace } from "react-icons/md";
 import AppBg from "../layouts/AppBg";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { BsCart4 } from "react-icons/bs";
 
 const Home = () => {
   return (
     <AppBg>
-      <MdKeyboardBackspace className="text-gold text-3xl cursor-pointer" />
+      <header className="text-gold mb-4 text-2xl cursor-pointer flex justify-between">
+        <MdKeyboardBackspace />
+        <Link to="/cart">
+        <BsCart4 />
+        </Link>
+      </header>
       <nav>
         <Categories />
       </nav>
