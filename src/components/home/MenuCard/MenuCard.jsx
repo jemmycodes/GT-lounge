@@ -1,6 +1,6 @@
 const MenuCard = () => {
   return (
-    <li className="bg-lang-card-color text-gold flex gap-4 relative border rounded-2xl border-[#34374b] py-5 px-8">
+    <li className="bg-lang-card-color text-gold flex gap-4 relative border rounded-2xl border-[#34374b] py-5 pl-8 pr-12">
       <figure>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/f/ff/2018-03-04_17_55_48_Large_serving_of_chocolate_soft-serve_ice_cream_at_the_Carvel_off_of_Denow_Road_in_Hopewell_Township%2C_Mercer_County%2C_New_Jersey.jpg"
