@@ -1,22 +1,24 @@
+import hamburger from "../../../assets/hamburger.png";
+
 const MenuCard = () => {
   return (
-    <li className="bg-lang-card-color text-gold flex gap-4 relative border rounded-2xl border-[#34374b] py-5 pl-8 pr-12">
+    <li className="bg-lang-card-color p-3 relative font-bold rounded-lg  text-white">
       <figure>
+        <div className="splash-bg-blur w-full top-0 left-0 absolute"></div>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/f/ff/2018-03-04_17_55_48_Large_serving_of_chocolate_soft-serve_ice_cream_at_the_Carvel_off_of_Denow_Road_in_Hopewell_Township%2C_Mercer_County%2C_New_Jersey.jpg"
-          alt="food"
-          height={50}
-          width={80}
-          className="rounded-full aspect-square"
+          src={hamburger}
+          alt=""
+          height={100}
+          width={100}
+          className="aspect-square"
         />
       </figure>
-      <span className="flex gap-2 flex-col">
-        <h3 className="text-xl font-semibold">Ice Cream</h3>
-        <h2 className="text-2xl font-bold first-letter:text-lg">$12</h2>
-      </span>
-      <span className="rounded-tl-2xl text-black rounded-br-2xl font-semibold text-xl bg-gold py-2 px-4  absolute bottom-0 right-0">
-        +
-      </span>
+      <p>Joe's Special Burger</p>
+      <p className="font-normal text-gray-200 -mt-1">delicious</p>
+      <div className="flex justify-between items-center mt-1">
+        <p className="first-letter:text-gold text mt-2">$42.00</p>
+        <p className="bg-gold px-3 py-1 rounded-lg">+</p>
+      </div>
     </li>
   );
 };
