@@ -14,7 +14,7 @@ const Home = () => {
         </Link>
       </header>
       <section className="my-6 space-y-2">
-        <p className="text-white text-2xl max-w-[280px] font-semibold">
+        <p className="text-white text-4xl max-w-[280px] font-semibold">
           Lorem ipsum dolor sit amet.
         </p>
         <SearchBar />

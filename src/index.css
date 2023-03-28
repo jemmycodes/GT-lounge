@@ -10,6 +10,8 @@ html,
   height: 100%;
   width: 100%;
   max-width: 100%;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
 }
 
 .splash-bg-blur {
@@ -52,10 +54,10 @@ html,
   }
 
   .menu-link {
-    @apply flex min-w-fit gap-3 text-lang-card-color px-3 py-2 rounded-full font-semibold;
+    @apply flex min-w-fit gap-3 border-gold border text-gold px-3 py-2 rounded-full font-semibold;
   }
 
   .active-link {
-    @apply after:content-[""] after:p-3 after:bg-red-500;
+    @apply bg-gold border-none text-bgBlack;
   }
 }

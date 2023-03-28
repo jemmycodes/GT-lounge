@@ -10,6 +10,7 @@ const Menu = () => {
       <MenuCard />
       <MenuCard />
       <MenuCard />
+      <MenuCard />
     </ul>
   );
 };
