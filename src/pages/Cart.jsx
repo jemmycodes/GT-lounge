@@ -3,7 +3,7 @@ import { MdKeyboardBackspace } from "react-icons/md";
 
 const Cart = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-full">
       <header className="bg-white p-6 h-[10vh] flex text-bgBlack justify-between items-center">
         <MdKeyboardBackspace className="text-2xl" />
         <h1 className="text-xl font-semibold">Cart</h1>
