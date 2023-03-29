@@ -12,14 +12,23 @@ const defaultValues = {
   totalAmount: 0,
 };
 
-const appReducer = (state, action) => {};
+const appReducer = (state, action) => {
+  if (action.type === ACTIONS.addToCart) {
+    console.log("item added to cart");
+    console.log(action.item);
+  }
+};
 
 const AppProvider = ({ children }) => {
-  const context = {
-    cart: [],
+  const addItemToCartHandler = (item) => {
+    dispatchApp({ type: ACTIONS.addToCart, item });
   };
 
   const [appState, dispatchApp] = useReducer(appReducer, defaultValues);
+  const context = {
+    // cart: appState.cart,
+    addToCart: addItemToCartHandler,
+  };
 
   return <appcontext.Provider value={context}>{children}</appcontext.Provider>;
 };
