@@ -14,8 +14,8 @@ const Home = () => {
         </Link>
       </header>
       <section className="my-6 mb-8 space-y-7">
-        <p className="text-white text-4xl mt-4 max-w-[280px] font-semibold">
-          Lorem ipsum dolor sit amet.
+        <p className="header-text-gradient">
+          Welcome to GT Lounge online menu service. Enjoy!
         </p>
         <SearchBar />
       </section>

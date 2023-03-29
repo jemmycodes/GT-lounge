@@ -43,6 +43,11 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.text-fill-transparent {
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
 @layer base {
   .splash-bg-blur {
     @apply bg-blend-soft-light mix-blend-soft-light px-32 py-20;
@@ -70,5 +75,9 @@ input[type="number"] {
 
   .active-link {
     @apply bg-gold border-none text-bgBlack;
+  }
+
+  .header-text-gradient {
+    @apply bg-gradient-to-r from-white to-gold bg-clip-text text-4xl mt-4 max-w-[280px] font-semibold text-fill-transparent;
   }
 }
