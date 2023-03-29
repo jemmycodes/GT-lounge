@@ -1,10 +1,9 @@
-import { useState } from "react";
 import hamburger from "../../../assets/hamburger.webp";
+import { Input } from "../..";
 
 const MenuCard = () => {
-  const [quantity, setQuantity] = useState(1);
   return (
-    <li className="bg-lang-card-color p-3 gap-4 items-center flex relative font-bold rounded-lg  text-white">
+    <li className="bg-lang-card-color p-5 gap-4 items-center flex relative font-bold rounded-lg  text-white">
       <figure>
         <div className="splash-bg-blur px-28 -top-5 left-0 absolute"></div>
         <img
@@ -31,13 +30,7 @@ const MenuCard = () => {
               </p>
             </div>
 
-            <input
-              type="number"
-              value={quantity}
-              className="  text-gold border border-gold bg-transparent focus:outline-none focus:border-2 max-w-[2rem]  rounded-md text-center"
-              onChange={(e) => setQuantity(e.target.value)}
-              required
-            />
+            <Input />
             <div>
               <p className="bg-gold px-2 rounded-md  py-[.1rem] cursor-pointer text-center">
                 -

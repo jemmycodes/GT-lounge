@@ -9,3 +9,4 @@ export { default as Category } from "../components/home/Categories/Category";
 export { default as Categories } from "../components/home/Categories/Categories";
 export { default as MenuCard } from "./home/MenuCard/MenuCard";
 export { default as SearchBar } from "./interface/SearchBar";
+export { default as Input } from "./interface/Input";
