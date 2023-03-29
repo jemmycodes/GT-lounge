@@ -1,5 +1,5 @@
 import { useState } from "react";
-import hamburger from "../../../assets/hamburger.png";
+import hamburger from "../../../assets/hamburger.webp";
 
 const MenuCard = () => {
   const [quantity, setQuantity] = useState(1);
