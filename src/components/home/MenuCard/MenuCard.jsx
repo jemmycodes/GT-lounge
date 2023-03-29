@@ -6,7 +6,7 @@ const MenuCard = () => {
   return (
     <li className="bg-lang-card-color p-3 gap-4 items-center flex relative font-bold rounded-lg  text-white">
       <figure>
-        <div className="splash-bg-blur px-28 left-0 absolute"></div>
+        <div className="splash-bg-blur px-28 -top-5 left-0 absolute"></div>
         <img
           src={hamburger}
           alt=""
