@@ -63,15 +63,16 @@ const MenuCard = ({ id, price, description, image, name }) => {
           </span>
           <BiCartAdd
             className="p-1 rounded-lg cursor-pointer font-bold bg-gold text-white text-3xl"
-            onClick={() =>
+            onClick={() => {
               addToCart({
                 id,
                 image,
                 quantity,
                 name,
                 price,
-              })
-            }
+              });
+              setQuantity(1);
+            }}
           />
         </div>
       </div>
