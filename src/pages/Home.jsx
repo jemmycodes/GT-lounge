@@ -3,10 +3,12 @@ import { MdKeyboardBackspace } from "react-icons/md";
 import AppBg from "../layouts/AppBg";
 import { Link, Outlet } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
+import Alert from "../components/interface/Alert";
 
 const Home = () => {
   return (
     <AppBg>
+      <Alert />
       <header className="text-gray-600  text-2xl cursor-pointer flex justify-between">
         <MdKeyboardBackspace />
         <Link to="/cart">

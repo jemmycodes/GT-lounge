@@ -13,16 +13,22 @@ const defaultCartState = {
 };
 
 const cartReducer = (state, { type, food }) => {
+  console.log(state.cart.length);
   if (type === CART_ACTIONS.addToCart) {
     // Check if item exists in the cart already
-    const existingItem = state.cart.find((item) => item.id === food.id);
+    const existingFoodIndex = state.cart.findIndex(
+      (item) => item.id === food.id
+    );
+    const existingFood = state.cart[existingFoodIndex];
     let updatedCart;
     // if it does, increase the quantity by the item.quantity
-    if (existingItem) {
-      updatedCart = {
-        ...existingItem,
-        quantity: +food.quantity + +existingItem.quantity,
+    if (existingFood) {
+      const updatedFood = {
+        ...existingFood,
+        quantity: +existingFood.quantity + +food.quantity,
       };
+      updatedCart = [...state.cart];
+      updatedCart[existingFoodIndex] = updatedFood;
     } else {
       // else add it to the cart
       updatedCart = state.cart.concat(food);
