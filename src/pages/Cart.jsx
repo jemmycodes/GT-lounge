@@ -41,7 +41,9 @@ const Cart = () => {
         <section className="absolute bottom-0 left-0 flex flex-col w-full gap-5 p-5 text-white bg-lang-card-color rounded-t-3xl">
           <span className="flex items-center justify-between">
             <p className="text-xl">Total</p>
-            <p className="font-bold first-letter:text-gold">${totalAmount}</p>
+            <p className="font-bold first-letter:text-gold">
+              ${totalAmount.toFixed(2)}
+            </p>
           </span>
 
           <button className="p-2 rounded-full bg-gold">Checkout</button>

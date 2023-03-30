@@ -11,11 +11,9 @@ const Home = () => {
       <Alert />
       <header className="flex justify-between text-2xl text-gray-600 cursor-pointer">
         <MdKeyboardBackspace />
-        <Link to="/cart">
-          <span className="relative bg-red-400 ">
-            <BsCart4 />
-            <div className="absolute p-1 rounded-full top-6 -right-7 bg-gold"></div>
-          </span>
+        <Link to="/cart" className="relative">
+          <BsCart4 />
+          <div className="absolute top-0 p-1 rounded-full -right-1 bg-gold"></div>
         </Link>
       </header>
       <section className="my-6 mb-8 space-y-7">
