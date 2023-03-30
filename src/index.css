@@ -80,4 +80,16 @@ input[type="number"] {
   .header-text-gradient {
     @apply bg-gradient-to-r from-white to-gold bg-clip-text text-4xl mt-4 max-w-[280px] font-semibold text-fill-transparent;
   }
+
+  .menu-btns {
+    @apply bg-gold  px-2 rounded-md  py-[.1rem] cursor-pointer text-center;
+  }
+
+  .menu-cards input {
+    @apply text-gold border border-gold bg-transparent focus:outline-none focus:border-2 max-w-[2rem]  rounded-md text-center;
+  }
+
+  .menu-cards {
+    @apply bg-lang-card-color p-5 gap-4 items-center flex flex-col relative font-bold rounded-lg  text-white;
+  }
 }
