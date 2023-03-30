@@ -1,7 +1,9 @@
+import { MdDelete, MdDeleteOutline } from "react-icons/md";
+
 const CartCard = ({ image, price, name, quantity }) => {
   return (
-    <hgroup className="bg-lang-card-color justify-between flex items-center text-white p-4 gap-2 rounded-xl">
-      <div className="flex gap-2 items-center">
+    <hgroup className="flex items-center justify-between gap-2 p-4 text-white bg-lang-card-color rounded-xl">
+      <div className="flex items-center gap-2">
         <figure>
           <img
             src={image}
@@ -11,18 +13,18 @@ const CartCard = ({ image, price, name, quantity }) => {
             className="rounded-full aspect-square"
           />
         </figure>
-        <span className="flex gap-2 flex-col">
+        <span className="flex flex-col gap-2">
           <h3 className="font-semibold whitespace-pre-wrap">{name}</h3>
-          <span className="flex gap-4 items-center">
+          <span className="flex items-center gap-4">
             <p>{price}</p>
-            <p className="text-gray-300 text-sm">x{quantity}</p>
+            <p className="text-sm text-gray-300">x{quantity}</p>
           </span>
         </span>
       </div>
-      <span className="flex flex-col bg-gray-700 p-1 gap-1 rounded-xl items-center ">
+      <span className="flex flex-col items-center justify-center gap-1 p-2 bg-gray-700 rounded-xl ">
         <div>
           <p
-            className="menu-btns"
+            className=""
             // onClick={() => {
             //   if (quantity <= 0) return;
             //   setQuantity((prevState) => prevState - 1);
@@ -34,14 +36,17 @@ const CartCard = ({ image, price, name, quantity }) => {
 
         <div>
           <p
-            className="menu-btns"
-            // onClick={() => {
-            //   if (quantity <= 0) return;
-            //   setQuantity((prevState) => prevState + 1);
-            // }}
+
+          // onClick={() => {
+          //   if (quantity <= 0) return;
+          //   setQuantity((prevState) => prevState + 1);
+          // }}
           >
             -
           </p>
+        </div>
+        <div className="p-1 rounded-lg bg-gold">
+          <MdDelete className="text-2xl " />
         </div>
       </span>
     </hgroup>

@@ -50,7 +50,7 @@ input[type="number"] {
 
 @layer base {
   .splash-bg-blur {
-    @apply bg-blend-soft-light mix-blend-soft-light px-32 py-20;
+    @apply px-32 py-20 bg-blend-soft-light mix-blend-soft-light;
   }
 
   .language-card {
@@ -62,7 +62,7 @@ input[type="number"] {
   }
 
   hgroup form div {
-    @apply flex gap-4 justify-between text-lg items-center;
+    @apply flex items-center justify-between gap-4 text-lg;
   }
 
   .menu-items-splash-screen {
@@ -70,11 +70,11 @@ input[type="number"] {
   }
 
   .menu-link {
-    @apply flex min-w-fit gap-3 border-gold border text-gold px-3 py-2 rounded-full font-semibold;
+    @apply flex gap-3 px-3 py-2 font-semibold border rounded-full min-w-fit border-gold text-gold;
   }
 
   .active-link {
-    @apply bg-gold border-none text-bgBlack;
+    @apply border-none bg-gold text-bgBlack;
   }
 
   .header-text-gradient {
@@ -90,6 +90,6 @@ input[type="number"] {
   }
 
   .menu-cards {
-    @apply bg-lang-card-color p-5 gap-4 items-center flex flex-col relative font-bold rounded-lg  text-white;
+    @apply relative flex flex-col items-center gap-4 p-5 font-bold text-white rounded-lg bg-lang-card-color;
   }
 }

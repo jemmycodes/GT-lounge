@@ -31,7 +31,13 @@ const Cart = () => {
             cartItems
           ) : (
             <figure>
-              <img src={emptyCart} alt="" className="mt-10" />
+              <img
+                src={emptyCart}
+                alt=""
+                height={500}
+                width={500}
+                className="mt-5"
+              />
               <figcaption className="text-xl text-center text-gold">
                 Your cart is empty!
               </figcaption>
