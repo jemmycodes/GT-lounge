@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { getTotalAmount } from "../constants/helpers";
 import cartContext from "./cartContext";
 
 const CART_ACTIONS = {
@@ -20,20 +21,28 @@ const cartReducer = (state, { type, food }) => {
       (item) => item.id === food.id
     );
     const existingFood = state.cart[existingFoodIndex];
-    let updatedCart;
+    let updatedCart, newTotalAmount;
+
     // if it does, increase the quantity by the item.quantity
     if (existingFood) {
       const updatedFood = {
         ...existingFood,
         quantity: +existingFood.quantity + +food.quantity,
+        amount:
+          (+existingFood.quantity + +food.quantity) *
+          +existingFood.price.slice(1),
       };
+
       updatedCart = [...state.cart];
       updatedCart[existingFoodIndex] = updatedFood;
+      newTotalAmount = getTotalAmount(state.cart, food);
     } else {
       // else add it to the cart
       updatedCart = state.cart.concat(food);
+      newTotalAmount = getTotalAmount(state.cart, food);
     }
-    return { ...state, cart: updatedCart, totalAmount: 0 };
+
+    return { ...state, cart: updatedCart, totalAmount: newTotalAmount };
   }
 
   if (type === CART_ACTIONS.reduceFromCart) {
@@ -67,6 +76,7 @@ const AppProvider = ({ children }) => {
     addToCart: addItemToCartHandler,
     removeFromCart: removeFromCartHandler,
     removeFromCart: removeFromCartHandler,
+    totalAmount: cartState.totalAmount,
   };
 
   return (

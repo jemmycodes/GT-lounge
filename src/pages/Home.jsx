@@ -9,10 +9,13 @@ const Home = () => {
   return (
     <AppBg>
       <Alert />
-      <header className="text-gray-600  text-2xl cursor-pointer flex justify-between">
+      <header className="flex justify-between text-2xl text-gray-600 cursor-pointer">
         <MdKeyboardBackspace />
         <Link to="/cart">
-          <BsCart4 />
+          <span className="relative bg-red-400 ">
+            <BsCart4 />
+            <div className="absolute p-1 rounded-full top-6 -right-7 bg-gold"></div>
+          </span>
         </Link>
       </header>
       <section className="my-6 mb-8 space-y-7">

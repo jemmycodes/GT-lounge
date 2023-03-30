@@ -3,9 +3,20 @@ import { BsCart4 } from "react-icons/bs";
 import { MdKeyboardBackspace } from "react-icons/md";
 import CartCard from "../components/interface/CartCard";
 import cartContext from "../context/cartContext";
+import emptyCart from "../assets/empty-cart.webp";
 
 const Cart = () => {
-  const { cart } = useContext(cartContext);
+  const { cart, totalAmount } = useContext(cartContext);
+
+  const cartItems = cart.map(({ image, price, quantity, name, id }) => (
+    <CartCard
+      image={image}
+      price={price}
+      quantity={quantity}
+      name={name}
+      key={id}
+    />
+  ));
 
   return (
     <div className="flex flex-col h-full">
@@ -14,24 +25,27 @@ const Cart = () => {
         <h1 className="text-xl font-semibold">Cart</h1>
         <BsCart4 className="text-2xl font-bold" />
       </header>
-      <section className="bg-bgBlack h-[90vh] overflow-y-scroll scrollbar-hide flex flex-col gap-4 rounded-t-3xl p-6 pb-1">
-        {cart.map(({ image, price, quantity, name, id }) => (
-          <CartCard
-            image={image}
-            price={price}
-            quantity={quantity}
-            name={name}
-            key={id}
-          />
-        ))}
-      </section>
-      <section className="absolute flex gap-5 flex-col text-white  bottom-0 w-full left-0 bg-lang-card-color p-5 rounded-t-3xl">
-        <span className="flex items-center justify-between">
-          <p className="text-xl">Total</p>
-          <p className="first-letter:text-gold font-bold">$500</p>
-        </span>
+      <section className="bg-bgBlack h-[90vh] overflow-y-scroll scrollbar-hide rounded-t-3xl p-6 pb-1">
+        <section className="flex flex-col gap-4 h-[77%] overflow-y-scroll scrollbar-hide">
+          {cart.length > 0 ? (
+            cartItems
+          ) : (
+            <figure>
+              <img src={emptyCart} alt="" className="mt-10" />
+              <figcaption className="text-xl text-center text-gold">
+                Your cart is empty!
+              </figcaption>
+            </figure>
+          )}
+        </section>
+        <section className="absolute bottom-0 left-0 flex flex-col w-full gap-5 p-5 text-white bg-lang-card-color rounded-t-3xl">
+          <span className="flex items-center justify-between">
+            <p className="text-xl">Total</p>
+            <p className="font-bold first-letter:text-gold">${totalAmount}</p>
+          </span>
 
-        <button className="bg-gold p-2 rounded-full">Checkout</button>
+          <button className="p-2 rounded-full bg-gold">Checkout</button>
+        </section>
       </section>
     </div>
   );

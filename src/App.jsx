@@ -11,6 +11,7 @@ const routes = createBrowserRouter([
     path: "menu",
     element: <Home />,
     children: [
+      { index: true, element: <Menu /> },
       {
         path: ":type",
         element: <Menu />,

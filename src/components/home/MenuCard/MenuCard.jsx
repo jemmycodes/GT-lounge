@@ -70,6 +70,7 @@ const MenuCard = ({ id, price, description, image, name }) => {
                 quantity,
                 name,
                 price,
+                amount: +quantity * +price.slice(1),
               });
               setQuantity(1);
             }}
