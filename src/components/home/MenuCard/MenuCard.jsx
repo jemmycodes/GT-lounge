@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import appcontext from "../../../context/AppContext";
+import appcontext from "../../../context/cartContext";
 import { BiCartAdd } from "react-icons/bi";
 
 const MenuCard = ({ id, price, description, image, name }) => {

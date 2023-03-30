@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import AppContext from "./AppContext";
+import cartContext from "./cartContext";
 
 const CART_ACTIONS = {
   addToCart: "ADD_TO_CART",
@@ -63,7 +63,9 @@ const AppProvider = ({ children }) => {
     removeFromCart: removeFromCartHandler,
   };
 
-  return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
+  return (
+    <cartContext.Provider value={context}>{children}</cartContext.Provider>
+  );
 };
 
 export default AppProvider;

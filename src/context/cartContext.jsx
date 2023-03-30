@@ -1,6 +1,6 @@
 import React from "react";
 
-const AppContext = React.createContext({
+const cartContext = React.createContext({
   cart: [],
   addToCart: () => {},
   removeFromCart: () => {},
@@ -8,4 +8,4 @@ const AppContext = React.createContext({
   totalAmount: 0,
 });
 
-export default AppContext;
+export default cartContext;
