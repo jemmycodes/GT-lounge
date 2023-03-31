@@ -1,11 +1,12 @@
 import { useReducer } from "react";
-import { getTotalAmount } from "../constants/helpers";
+import { BsFillCartCheckFill } from "react-icons/bs";
 import cartContext from "./cartContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CART_ACTIONS = {
   addToCart: "ADD_TO_CART",
   removeFromCart: "REMOVE_FROM_CART",
-  reduceFromCart: "REDUCE_FROM_CART ",
 };
 
 const defaultCartState = {
@@ -13,45 +14,68 @@ const defaultCartState = {
   totalAmount: 0,
 };
 
-const cartReducer = (state, { type, food }) => {
-  console.log(state.cart.length);
-  if (type === CART_ACTIONS.addToCart) {
+const cartReducer = (state, action) => {
+  if (action.type === CART_ACTIONS.addToCart) {
     // Check if item exists in the cart already
-    const existingFoodIndex = state.cart.findIndex(
-      (item) => item.id === food.id
+    const existingFoodIndex = state?.cart?.findIndex(
+      (item) => item?.id === action?.food?.id
     );
-    const existingFood = state.cart[existingFoodIndex];
-    let updatedCart, newTotalAmount;
+    const existingFood = state?.cart[existingFoodIndex];
+    let updatedCart;
+    const newTotalAmount =
+      state.totalAmount + +action.food.price.slice(1) * +action.food.quantity;
 
     // if it does, increase the quantity by the item.quantity
     if (existingFood) {
       const updatedFood = {
         ...existingFood,
-        quantity: +existingFood.quantity + +food.quantity,
-        amount:
-          (+existingFood.quantity + +food.quantity) *
-          +existingFood.price.slice(1),
+        quantity: +existingFood?.quantity + +action.food?.quantity,
       };
 
-      updatedCart = [...state.cart];
+      updatedCart = [...state?.cart];
       updatedCart[existingFoodIndex] = updatedFood;
-      newTotalAmount = getTotalAmount(state.cart, food);
     } else {
       // else add it to the cart
-      updatedCart = state.cart.concat(food);
-      newTotalAmount = getTotalAmount(state.cart, food);
+      updatedCart = state?.cart?.concat(action?.food);
     }
-
+    // toast("🦄 Wow so easy!", {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   icon: <BsFillCartCheckFill />,
+    // });
     return { ...state, cart: updatedCart, totalAmount: newTotalAmount };
   }
 
-  if (type === CART_ACTIONS.reduceFromCart) {
-    return { ...state, quantity: quantity-- };
-  }
+  if (action.type === CART_ACTIONS.removeFromCart) {
+    // check if the quantity in  cart is more than 1
+    const exitingItemIndex = state?.cart?.findIndex(
+      (item) => item?.id === action?.id
+    );
+    let updatedCart, newTotalAmount;
 
-  if (type === CART_ACTIONS.removeFromCart) {
-    // check if it exists in the cart
-    // if it exists, remove the item from the cart
+    const existingFood = state?.cart[exitingItemIndex];
+    newTotalAmount = state.totalAmount - +existingFood.price.slice(1);
+    // if true, quantity--
+    if (existingFood.quantity > 1) {
+      const updatedFood = {
+        ...existingFood,
+
+        quantity: existingFood?.quantity - 1,
+      };
+      updatedCart = [...state?.cart];
+      updatedCart[exitingItemIndex] = updatedFood;
+    }
+    // else remove the item completely
+    else {
+      updatedCart = state.cart.filter((item) => item.id !== action.id);
+    }
+    return { ...state, cart: updatedCart, totalAmount: newTotalAmount };
   }
 };
 
@@ -64,17 +88,12 @@ const AppProvider = ({ children }) => {
     dispatchApp({ type: CART_ACTIONS.removeFromCart, id });
   };
 
-  const reduceFromCartHandler = () => {
-    dispatchApp({ type: CART_ACTIONS.reduceFromCart });
-  };
-
   const [cartState, dispatchApp] = useReducer(cartReducer, defaultCartState);
   console.log(cartState.cart);
 
   const context = {
     cart: cartState.cart,
     addToCart: addItemToCartHandler,
-    removeFromCart: removeFromCartHandler,
     removeFromCart: removeFromCartHandler,
     totalAmount: cartState.totalAmount,
   };

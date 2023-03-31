@@ -1,17 +1,18 @@
 import { useContext, useState } from "react";
 import appcontext from "../../../context/cartContext";
 import { BiCartAdd } from "react-icons/bi";
+import Signs from "../../interface/Signs";
 
 const MenuCard = ({ id, price, description, image, name }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const { addToCart, removeFromCart } = useContext(appcontext);
+  const { addToCart } = useContext(appcontext);
 
   return (
     <li className="menu-cards">
-      <div className="flex justify-between items-center gap-4">
+      <div className="flex items-center justify-between gap-4">
         <figure>
-          <div className="splash-bg-blur px-28 -top-8 left-0 absolute"></div>
+          <div className="absolute left-0 splash-bg-blur px-28 -top-8"></div>
           <img
             src={image}
             alt=""
@@ -22,25 +23,25 @@ const MenuCard = ({ id, price, description, image, name }) => {
         </figure>
         <span>
           <h2 className="text-xl">{name}</h2>
-          <p className="font-normal mt-1 text-gray-200 text-sm ">
+          <p className="mt-1 text-sm font-normal text-gray-200 ">
             {description}
           </p>
         </span>
       </div>
-      <div className="flex flex-col gap-3 w-full">
-        <div className="flex justify-between  items-center gap-2 ">
-          <p className="first-letter:text-gold first-letter:text-base text text-xl">
+      <div className="flex flex-col w-full gap-3">
+        <div className="flex items-center justify-between gap-2 ">
+          <p className="text-xl first-letter:text-gold first-letter:text-base text">
             {price}
           </p>
-          <span className="space-x-2 flex">
-            <div>
-              <p
-                className="menu-btns"
-                onClick={() => setQuantity((prevState) => prevState + 1)}
-              >
-                +
-              </p>
-            </div>
+          <span className="flex space-x-2">
+            <Signs
+              sign="-"
+              classes="menu-btns"
+              onClick={() => {
+                if (quantity < 1) return;
+                setQuantity((prevState) => prevState - 1);
+              }}
+            />
             <input
               type="number"
               value={quantity}
@@ -48,26 +49,19 @@ const MenuCard = ({ id, price, description, image, name }) => {
               onChange={(e) => setQuantity(e.target.value)}
               required
             />
-
-            <div>
-              <p
-                className="menu-btns"
-                onClick={() => {
-                  if (quantity <= 0) return;
-                  setQuantity((prevState) => prevState - 1);
-                }}
-              >
-                -
-              </p>
-            </div>
+            <Signs
+              sign="+"
+              classes="menu-btns"
+              onClick={() => setQuantity((prevState) => prevState + 1)}
+            />
           </span>
           <BiCartAdd
-            className="p-1 rounded-lg cursor-pointer font-bold bg-gold text-white text-3xl"
+            className="p-1 text-3xl font-bold text-white rounded-lg cursor-pointer bg-gold"
             onClick={() => {
               addToCart({
                 id,
                 image,
-                quantity,
+                quantity: quantity || 1,
                 name,
                 price,
                 amount: +quantity * +price.slice(1),

@@ -3,16 +3,17 @@ import { MdKeyboardBackspace } from "react-icons/md";
 import AppBg from "../layouts/AppBg";
 import { Link, Outlet } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
-import Alert from "../components/interface/Alert";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   return (
     <AppBg>
-      <Alert />
       <header className="flex justify-between text-2xl text-gray-600 cursor-pointer">
         <MdKeyboardBackspace />
         <Link to="/cart" className="relative">
           <BsCart4 />
+          <ToastContainer />
           <div className="absolute top-0 p-1 rounded-full -right-1 bg-gold"></div>
         </Link>
       </header>

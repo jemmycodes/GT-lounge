@@ -1,6 +1,11 @@
-import { MdDelete, MdDeleteOutline } from "react-icons/md";
+import { useContext } from "react";
+import { MdDelete } from "react-icons/md";
+import cartContext from "../../context/cartContext";
+import Signs from "./Signs";
 
-const CartCard = ({ image, price, name, quantity }) => {
+const CartCard = ({ image, price, name, quantity, id }) => {
+  const { addToCart, removeFromCart } = useContext(cartContext);
+
   return (
     <hgroup className="flex items-center justify-between gap-2 p-4 text-white bg-lang-card-color rounded-xl">
       <div className="flex items-center gap-2">
@@ -22,31 +27,36 @@ const CartCard = ({ image, price, name, quantity }) => {
         </span>
       </div>
       <span className="flex flex-col items-center justify-center gap-1 p-2 bg-gray-700 rounded-xl ">
-        <div>
-          <p
-            className=""
-            // onClick={() => {
-            //   if (quantity <= 0) return;
-            //   setQuantity((prevState) => prevState - 1);
-            // }}
-          >
-            +
-          </p>
-        </div>
-
-        <div>
-          <p
-
-          // onClick={() => {
-          //   if (quantity <= 0) return;
-          //   setQuantity((prevState) => prevState + 1);
-          // }}
-          >
-            -
-          </p>
-        </div>
+        <Signs
+          sign="+"
+          id={id}
+          name={name}
+          price={price}
+          quantity={quantity}
+          image={image}
+          classes="cursor-pointer"
+          onClick={() =>
+            addToCart({
+              name,
+              price,
+              id,
+              quantity: 1,
+              image,
+            })
+          }
+        />
+        <Signs
+          sign="-"
+          id={id}
+          name={name}
+          price={price}
+          quantity={quantity}
+          classes="cursor-pointer"
+          image={image}
+          onClick={() => removeFromCart(id)}
+        />
         <div className="p-1 rounded-lg bg-gold">
-          <MdDelete className="text-2xl " />
+          <MdDelete className="text-2xl " onClick={() => removeFromCart(id)} />
         </div>
       </span>
     </hgroup>

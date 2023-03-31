@@ -15,6 +15,7 @@ const Cart = () => {
       quantity={quantity}
       name={name}
       key={id}
+      id={id}
     />
   ));
 
