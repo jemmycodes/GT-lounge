@@ -4,6 +4,7 @@ import { MdKeyboardBackspace } from "react-icons/md";
 import CartCard from "../components/interface/CartCard";
 import cartContext from "../context/cartContext";
 import emptyCart from "../assets/empty-cart.webp";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, totalAmount } = useContext(cartContext);
@@ -22,7 +23,9 @@ const Cart = () => {
   return (
     <div className="flex flex-col h-full">
       <header className="bg-white p-6 h-[10vh] flex text-bgBlack justify-between items-center">
-        <MdKeyboardBackspace className="text-2xl" />
+        <Link to="/menu">
+          <MdKeyboardBackspace className="text-2xl" />
+        </Link>
         <h1 className="text-xl font-semibold">Cart</h1>
         <BsCart4 className="text-2xl font-bold" />
       </header>

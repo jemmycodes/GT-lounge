@@ -10,10 +10,12 @@ const Home = () => {
   return (
     <AppBg>
       <header className="flex justify-between text-2xl text-gray-600 cursor-pointer">
-        <MdKeyboardBackspace />
+        <Link to="/">
+          <MdKeyboardBackspace />
+        </Link>
         <Link to="/cart" className="relative">
           <BsCart4 />
-          <ToastContainer />
+
           <div className="absolute top-0 p-1 rounded-full -right-1 bg-gold"></div>
         </Link>
       </header>
