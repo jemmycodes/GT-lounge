@@ -1,17 +1,20 @@
 import { useReducer } from "react";
-import { BsFillCartCheckFill } from "react-icons/bs";
 import cartContext from "./cartContext";
-import { toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
+import { CartItem } from "../components";
 
 const CART_ACTIONS = {
   addToCart: "ADD_TO_CART",
   removeFromCart: "REMOVE_FROM_CART",
+  reduceFromCart: "REDUCE_FROM_CART",
+  search: "SEARCH_ITEM",
 };
 
 const defaultCartState = {
   cart: [],
   totalAmount: 0,
+  searchValue: "",
 };
 
 const cartReducer = (state, action) => {
@@ -38,17 +41,7 @@ const cartReducer = (state, action) => {
       // else add it to the cart
       updatedCart = state?.cart?.concat(action?.food);
     }
-    // toast("🦄 Wow so easy!", {
-    //   position: "top-right",
-    //   autoClose: 5000,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "light",
-    //   icon: <BsFillCartCheckFill />,
-    // });
+
     return { ...state, cart: updatedCart, totalAmount: newTotalAmount };
   }
 
@@ -60,21 +53,43 @@ const cartReducer = (state, action) => {
     let updatedCart, newTotalAmount;
 
     const existingFood = state?.cart[exitingItemIndex];
-    newTotalAmount = state.totalAmount - +existingFood.price.slice(1);
-    // if true, quantity--
-    if (existingFood.quantity > 1) {
+    newTotalAmount =
+      state.totalAmount - +existingFood.price.slice(1) * +existingFood.quantity;
+
+    updatedCart = state.cart.filter((item) => item.id !== action.id);
+
+    return { ...state, cart: updatedCart, totalAmount: newTotalAmount };
+  }
+
+  if (action?.type === CART_ACTIONS.search) {
+    const newSearchItem = action?.text;
+    return { ...state, searchValue: newSearchItem };
+  }
+
+  if (action.type === CART_ACTIONS.reduceFromCart) {
+    let newTotalAmount, updatedCart;
+
+    const existingFoodIndex = state?.cart.findIndex(
+      (item) => item.id === action.id
+    );
+
+    const existingFood = state.cart[existingFoodIndex];
+
+    if (existingFood) {
+      if (existingFood?.quantity === 1)
+        return {
+          ...state,
+        };
       const updatedFood = {
         ...existingFood,
-
-        quantity: existingFood?.quantity - 1,
+        quantity: +existingFood?.quantity - 1,
       };
-      updatedCart = [...state?.cart];
-      updatedCart[exitingItemIndex] = updatedFood;
+      updatedCart = [...state.cart];
+      updatedCart[existingFoodIndex] = updatedFood;
+
+      newTotalAmount = state.totalAmount - +existingFood.price.slice(1);
     }
-    // else remove the item completely
-    else {
-      updatedCart = state.cart.filter((item) => item.id !== action.id);
-    }
+
     return { ...state, cart: updatedCart, totalAmount: newTotalAmount };
   }
 };
@@ -88,14 +103,24 @@ const AppProvider = ({ children }) => {
     dispatchApp({ type: CART_ACTIONS.removeFromCart, id });
   };
 
+  const searchFoodHandler = (text) => {
+    dispatchApp({ type: CART_ACTIONS.search, text });
+  };
+
+  const reduceFromCartHandler = (id) => {
+    dispatchApp({ type: CART_ACTIONS.reduceFromCart, id });
+  };
+
   const [cartState, dispatchApp] = useReducer(cartReducer, defaultCartState);
-  console.log(cartState.cart);
 
   const context = {
     cart: cartState.cart,
     addToCart: addItemToCartHandler,
     removeFromCart: removeFromCartHandler,
+    reduceFromCart: reduceFromCartHandler,
     totalAmount: cartState.totalAmount,
+    onSearch: searchFoodHandler,
+    searchText: cartState.searchValue,
   };
 
   return (

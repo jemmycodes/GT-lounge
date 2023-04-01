@@ -7,5 +7,7 @@ export { default as SplashScreenMockups } from "./SplashScreenComponents/SplashS
 export { default as SplashScreenLang } from "./SplashScreenComponents/SplashScreenLang";
 export { default as Category } from "../components/home/Categories/Category";
 export { default as Categories } from "../components/home/Categories/Categories";
-export { default as MenuCard } from "./home/MenuCard/MenuCard";
+export { default as MenuCard } from "./menu/MenuCard";
 export { default as SearchBar } from "./interface/SearchBar";
+export { default as CartContainer } from "./cart/CartContainer";
+export { default as CartItem } from "./cart/CartItem";

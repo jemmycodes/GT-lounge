@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import cartContext from "../../context/cartContext";
-import Signs from "./Signs";
+import Signs from "../interface/Signs";
 
 const CartCard = ({ image, price, name, quantity, id }) => {
-  const { addToCart, removeFromCart } = useContext(cartContext);
+  const { addToCart, removeFromCart, reduceFromCart } = useContext(cartContext);
 
   return (
     <hgroup className="flex items-center justify-between gap-2 p-4 text-white bg-lang-card-color rounded-xl">
@@ -53,10 +53,13 @@ const CartCard = ({ image, price, name, quantity, id }) => {
           quantity={quantity}
           classes="cursor-pointer"
           image={image}
-          onClick={() => removeFromCart(id)}
+          onClick={() => reduceFromCart(id)}
         />
         <div className="p-1 rounded-lg bg-gold">
-          <MdDelete className="text-2xl " onClick={() => removeFromCart(id)} />
+          <MdDelete
+            className="text-2xl cursor-pointer"
+            onClick={() => removeFromCart(id)}
+          />
         </div>
       </span>
     </hgroup>

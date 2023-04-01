@@ -6,8 +6,9 @@ const cartContext = React.createContext({
   addToCart: () => {},
   removeFromCart: () => {},
   reduceFromCart: () => {},
-  increaseCount: () => {},
-  decreaseCount: () => {},
+
+  searchText: "",
+  onSearch: () => {},
 });
 
 export default cartContext;
