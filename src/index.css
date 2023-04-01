@@ -48,6 +48,26 @@ input[type="number"] {
   -moz-text-fill-color: transparent;
 }
 
+.gradient-animation {
+  background: linear-gradient(-45deg, white, #eec865);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+
+  background-clip: text;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @layer base {
   .splash-bg-blur {
     @apply px-32 py-20 bg-blend-soft-light mix-blend-soft-light;
@@ -78,7 +98,7 @@ input[type="number"] {
   }
 
   .header-text-gradient {
-    @apply bg-gradient-to-r from-white to-gold bg-clip-text text-4xl mt-4 max-w-[280px] font-semibold text-fill-transparent;
+    @apply bg-gradient-to-r from-white to-gold bg-clip-text text-4xl mt-4  font-semibold text-fill-transparent;
   }
 
   .menu-btns {
