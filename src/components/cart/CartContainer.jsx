@@ -5,18 +5,18 @@ import { MdKeyboardBackspace } from "react-icons/md";
 
 import { CartItem } from "..";
 import { useLanguage } from "../../context/LanguageContext";
-import { useNavigate } from "react-router-dom";
+
 import { useApp } from "../../context/AppContext";
 
 const CartContainer = () => {
-  const { data, language } = useLanguage();
+  const { data } = useLanguage();
 
   const { cart, totalAmount } = useApp();
 
   return (
     <>
       <header className="bg-white p-6 h-[10vh] flex text-bgBlack justify-between items-center">
-        <Link to={`/menu/${data.categories[0].type}`}>
+        <Link to={`/menu/${data?.categories[0]?.type}`}>
           <MdKeyboardBackspace className="text-2xl" />
         </Link>
         <h1 className="text-xl font-semibold"> {data?.cart?.cart}</h1>
@@ -47,19 +47,19 @@ const CartContainer = () => {
                 className="mt-5"
               />
               <figcaption className="text-xl text-center text-gold">
-                {data.cart.empty}
+                {data?.cart?.empty}
               </figcaption>
             </figure>
           )}
         </section>
         <section className="absolute bottom-0 left-0 flex flex-col w-full gap-5 p-5 text-white bg-lang-card-color rounded-t-3xl">
           <span className="flex items-center justify-between">
-            <p className="text-xl"> {data.cart.total}</p>
+            <p className="text-xl"> {data?.cart?.total}</p>
             <p className="font-bold first-letter:text-gold">${totalAmount}</p>
           </span>
 
           <button className="p-2 rounded-full bg-gold">
-            {data.cart.checkout}
+            {data?.cart?.checkout}
           </button>
         </section>
       </section>

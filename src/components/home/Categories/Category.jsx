@@ -18,7 +18,7 @@ const Category = ({ type, icon }) => {
 
   return (
     <NavLink
-      to={`${type.toLowerCase()}`}
+      to={`${type?.toLowerCase()}`}
       className={({ isActive, isPending }) =>
         isActive ? "menu-link active-link" : "menu-link "
       }
