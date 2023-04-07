@@ -7,7 +7,7 @@ function RadioButtons({ id, value, language, onLanguageChange }) {
         id={id}
         name="choose-lang"
         type="radio"
-        onChange={onLanguageChange}
+        onChange={() => onLanguageChange(value.toLowerCase())}
         value={value}
       />
       <label htmlFor={id}>{value}</label>

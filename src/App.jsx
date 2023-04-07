@@ -1,29 +1,35 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SplashScreen from "./pages/SplashScreen";
+
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Menu from "./pages/Menu";
 
-const routes = createBrowserRouter([
-  { path: "/", element: <SplashScreen />, errorElement: <NotFound /> },
-  {
-    path: "menu",
-    element: <Home />,
-    children: [
-      { index: true, element: <Menu /> },
-      {
-        path: ":type",
-        element: <Menu />,
-      },
-    ],
-  },
-  { path: "cart", element: <Cart /> },
-]);
+import SplashScreen from "./pages/SplashScreen";
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <SplashScreen />,
+      errorElement: <NotFound />,
+    },
+    {
+      path: "menu",
+      element: <Home />,
+      children: [
+        { index: true, element: <Menu /> },
+        {
+          path: ":type",
+          element: <Menu />,
+        },
+      ],
+    },
+    { path: "cart", element: <Cart /> },
+  ]);
 
   useEffect(() => {
     const handleResize = () => {

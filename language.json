@@ -1,0 +1,111 @@
+{
+  "english": {
+    "categories": [
+      { "type": "Food", "icon": "food" },
+      { "type": "Wine", "icon": "wine" },
+      { "type": "Cognac", "icon": "cognac" },
+      { "type": "Beer", "icon": "beer" }
+    ],
+    "home": {
+      "welcome": "Welcome to GT Lounge online menu service. Enjoy!",
+      "search": "Search..."
+    },
+    "menu": [
+      {
+        "id": "1",
+        "name": "Pepperoni Pizza",
+        "description": "A classic pizza topped with pepperoni, tomato sauce, and mozzarella cheese.",
+
+        "price": "$12.99"
+      },
+
+      {
+        "id": "2",
+        "name": "Chicken Teriyaki Bowl",
+        "description": "Grilled chicken served over rice with teriyaki sauce, vegetables, and sesame seeds.",
+
+        "price": "$10.99"
+      },
+      {
+        "id": "3",
+        "name": "Burger and Fries",
+        "description": "A juicy beef patty topped with cheese, lettuce, tomato, and served with crispy fries.",
+
+        "price": "$8.99"
+      },
+      {
+        "id": "4",
+        "name": "Salmon Sashimi",
+        "description": "Fresh slices of raw salmon served with wasabi, soy sauce, and pickled ginger.",
+
+        "price": "$16.99"
+      },
+      {
+        "id": "5",
+        "name": "Vegetable Pad Thai",
+        "description": "Rice noodles stir-fried with tofu, vegetables, peanuts, and a sweet and sour sauce.",
+
+        "price": "$11.99"
+      }
+    ],
+    "cart": {
+      "empty": "Your cart is empty",
+      "cart": "Cart",
+      "total": "Total",
+      "checkout": "Checkout"
+    }
+  },
+  "turkish": {
+    "categories": [
+      { "type": "yemek", "icon": "food" },
+      {
+        "type": "şarap",
+        "icon": "wine"
+      },
+      { "type": "konyak", "icon": "cognac" },
+      { "type": "bira", "icon": "beer" }
+    ],
+    "home": {
+      "welcome": "GT Lounge online menü hizmetine hoş geldiniz. İyi eğlenceler!",
+      "search": " Arama..."
+    },
+    "menu": [
+      {
+        "id": "1",
+        "name": "Biberli pizza",
+        "description": "Biberli, domates soslu ve mozzarella peynirli klasik bir pizza.",
+        "price": "₺12.99"
+      },
+      {
+        "id": "2",
+        "name": "Tavuk Teriyaki Kase",
+        "description": "Teriyaki soslu pilav, sebze ve susam ile servis edilen ızgara tavuk.",
+        "price": "₺10.99"
+      },
+      {
+        "id": "3",
+        "name": "Hamburger Ve Patates Kızartması",
+        "description": "Peynir, marul, domates ve çıtır patates kızartması ile servis edilen sulu bir dana köfte.",
+        "price": "₺10.99"
+      },
+      {
+        "id": "4",
+        "name": "Somon Sashimi",
+        "description": "Taze çiğ somon dilimleri, wasabi, soya sosu ve zencefil turşusu ile servis edilir.",
+        "price": "₺10.99"
+      },
+      {
+        "id": "5",
+        "name": "Sebze Yastığı Tay",
+        "description": "Tofu, sebzeler, yer fıstığı ve tatlı ve ekşi sos ile tavada kızartılmış pirinç eriştesi.",
+        "price": "₺10.99"
+      }
+    ],
+    "cart": {
+      "empty": "Sepetiniz boş",
+      "cart": "Araba",
+      "total": "Toplam",
+      "checkout": "Çıkış yapmak"
+    }
+  }
+}

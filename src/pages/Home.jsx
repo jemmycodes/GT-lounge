@@ -3,11 +3,15 @@ import { MdKeyboardBackspace } from "react-icons/md";
 import AppBg from "../layouts/AppBg";
 import { Link, Outlet } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
-import { useContext } from "react";
-import cartContext from "../context/cartContext";
+import { useApp } from "../context/AppContext";
+import { useLanguage } from "../context/LanguageContext";
+import { useUpdateSearch } from "../context/SearchContext";
 
 const Home = () => {
-  const { cart } = useContext(cartContext);
+  const { data } = useLanguage();
+  const { cart } = useApp();
+
+  const { searchText, updateSearchText } = useUpdateSearch();
   return (
     <AppBg>
       <header className="flex justify-between text-2xl text-white cursor-pointer">
@@ -18,7 +22,7 @@ const Home = () => {
           <BsCart4 />
           <div
             className={
-              cart.length
+              cart.length > 0
                 ? "absolute top-0 p-1 rounded-full -right-1 bg-gold"
                 : "hidden"
             }
@@ -27,9 +31,12 @@ const Home = () => {
       </header>
       <section className="my-6 mb-8 space-y-7">
         <p className="header-text-gradient gradient-animation">
-          Welcome to GT Lounge online menu service. Enjoy!
+          {data.home.welcome}
         </p>
-        <SearchBar />
+        <SearchBar
+          searchText={searchText}
+          updateSearchText={updateSearchText}
+        />
       </section>
       <nav>
         <Categories />

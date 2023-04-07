@@ -1,12 +1,14 @@
-import { useContext, useState } from "react";
-import appcontext from "../../context/cartContext";
+import { useState } from "react";
+
 import { BiCartAdd } from "react-icons/bi";
 import Signs from "../interface/Signs";
+import image from "../../assets/hamburger.webp";
+import { useApp } from "../../context/AppContext";
 
-const MenuCard = ({ id, price, description, image, name }) => {
+const MenuCard = ({ id, price, description, name }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const { addToCart } = useContext(appcontext);
+  const { addToCart } = useApp();
 
   return (
     <li className="menu-cards">

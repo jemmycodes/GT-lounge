@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
-import cartContext from "../../context/cartContext";
+
 import Signs from "../interface/Signs";
+import { useApp } from "../../context/AppContext";
 
 const CartCard = ({ image, price, name, quantity, id }) => {
-  const { addToCart, removeFromCart, reduceFromCart } = useContext(cartContext);
+  const { addToCart, removeFromCart, reduceFromCart } = useApp();
 
   return (
     <hgroup className="flex items-center justify-between gap-2 p-4 text-white bg-lang-card-color rounded-xl">

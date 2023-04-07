@@ -1,16 +1,16 @@
-import { useContext } from "react";
 import { MenuCard } from "../components";
-import { foodItems } from "../constants/appData";
-import cartContext from "../context/cartContext";
+
+import { useLanguage } from "../context/LanguageContext";
+import { useUpdateSearch } from "../context/SearchContext";
+import useSearch from "../hooks/useSearch";
 
 const Menu = () => {
-  const { searchText } = useContext(cartContext);
+  const { data } = useLanguage();
+  const { searchText } = useUpdateSearch();
 
-  const filteredItems = foodItems.filter((item) =>
-    item.name.toLowerCase().includes(searchText.toLowerCase())
-  );
+  const { filteredItems } = useSearch(searchText, data.menu);
 
-  const menu = filteredItems.map(({ name, id, image, description, price }) => (
+  const menu = filteredItems.map(({ id, image, description, price, name }) => (
     <MenuCard
       key={id}
       id={id}
@@ -23,10 +23,12 @@ const Menu = () => {
 
   return (
     <ul className="grid my-8 grid-cols-1 gap-7 ">
-      {menu.length ? (
+      {menu.length > 0 ? (
         menu
       ) : (
-        <p className="text-gold text-center">No items Found!</p>
+        <p className="text-gold text-center ">
+          {`"${searchText}" is not available`}
+        </p>
       )}
     </ul>
   );

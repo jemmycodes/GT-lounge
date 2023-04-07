@@ -1,27 +1,15 @@
-import { useState } from "react";
-import {
-  SplashScreenBg,
-  SplashScreenLogo,
-  SplashScreenMenu,
-  SplashScreenMockups,
-  SplashScreenLang,
-} from "../components";
+import { ChooseLanguage, ChooseMenu } from "../components";
+import { useLanguage } from "../context/LanguageContext";
 
-function SplashScreen() {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleShowMenu = () => {
-    setShowMenu((showMenu) => !showMenu);
-  };
+const SplashScreen = () => {
+  const { language, proceed } = useLanguage();
 
   return (
-    <SplashScreenBg showMenu={showMenu}>
-      <SplashScreenLogo />
-      <SplashScreenMockups showMenu={showMenu} />
-      <SplashScreenLang showMenu={showMenu} onShowMenu={handleShowMenu} />
-      <SplashScreenMenu showMenu={showMenu} />
-    </SplashScreenBg>
+    <>
+      {proceed && <ChooseMenu />}
+      {!proceed && <ChooseLanguage />}
+    </>
   );
-}
+};
 
 export default SplashScreen;

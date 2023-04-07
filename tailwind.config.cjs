@@ -11,7 +11,7 @@ module.exports = {
         slideToButtom: "slideToButtom 1s ease",
         slideOutToleft: "slideOutToleft 1s ease",
         slideOutToRight: "slideOutToRight 1s ease",
-        fadeIn: "fadeIn 4s ease",
+        fadeIn: "fadeIn 2s ease",
       },
       backgroundImage: {
         "club-bg-splash-screen": "url('./assets/bar-bg.svg')",

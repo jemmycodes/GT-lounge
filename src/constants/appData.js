@@ -26,6 +26,14 @@ export const foodItems = [
     price: "$12.99",
   },
   {
+    id: "12",
+    name: "Peperroni Pizza",
+    description:
+      "A classic pizza topped with pepperoni, tomato sauce, and mozzarella cheese.",
+    image: hamburger,
+    price: "$12.99",
+  },
+  {
     id: "2",
     name: "Chicken Teriyaki Bowl",
     description:
