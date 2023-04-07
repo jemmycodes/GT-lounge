@@ -5,7 +5,9 @@ const CartContext = createContext();
 const { Provider } = CartContext;
 
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) ?? []
+  );
   const [totalAmount, setTotalAmount] = useState(0);
 
   const itemExists = (id) => cart.findIndex((item) => item?.id === id);
@@ -45,17 +47,19 @@ const CartProvider = ({ children }) => {
         ...existingFood,
         quantity: +existingFood.quantity - 1,
       });
-      
+
       setCart(cartData);
     }
   };
 
   useEffect(() => {
     setTotalAmount(
-      cart.reduce((acc, curr) => acc + curr.quantity * curr.price.slice(1), 0)
+      cart?.reduce((acc, curr) => acc + curr.quantity * curr.price.slice(1), 0)
     );
+    console.log(cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
- 
+
   return (
     <Provider
       value={{ cart, addToCart, reduceFromCart, removeFromCart, totalAmount }}
