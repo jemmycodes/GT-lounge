@@ -8,9 +8,9 @@ const Menu = () => {
   const { data } = useLanguage();
   const { searchText } = useUpdateSearch();
 
-  const { filteredItems } = useSearch(searchText, data.menu);
+  const { filteredItems } = useSearch(searchText, data?.menu);
 
-  const menu = filteredItems.map(({ id, image, description, price, name }) => (
+  const menu = filteredItems?.map(({ id, image, description, price, name }) => (
     <MenuCard
       key={id}
       id={id}
@@ -23,7 +23,7 @@ const Menu = () => {
 
   return (
     <ul className="grid my-8 grid-cols-1 gap-7 ">
-      {menu.length > 0 ? (
+      {menu?.length > 0 ? (
         menu
       ) : (
         <p className="text-gold text-center ">

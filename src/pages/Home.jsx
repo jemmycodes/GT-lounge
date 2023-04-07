@@ -1,17 +1,24 @@
 import { Categories, SearchBar } from "../components";
 import { MdKeyboardBackspace } from "react-icons/md";
 import AppBg from "../layouts/AppBg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useMatch, useNavigate } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { useApp } from "../context/AppContext";
 import { useLanguage } from "../context/LanguageContext";
 import { useUpdateSearch } from "../context/SearchContext";
+import { useEffect } from "react";
 
 const Home = () => {
-  const { data } = useLanguage();
+  const { data, language } = useLanguage();
   const { cart } = useApp();
+  const navigate = useNavigate();
+  const pathname = useMatch("menu");
+  const path = language === "english" ? "food" : "yemek";
 
   const { searchText, updateSearchText } = useUpdateSearch();
+  useEffect(() => {
+    pathname && navigate(`/menu/${path}`);
+  }, []);
   return (
     <AppBg>
       <header className="flex justify-between text-2xl text-white cursor-pointer">
@@ -31,7 +38,7 @@ const Home = () => {
       </header>
       <section className="my-6 mb-8 space-y-7">
         <p className="header-text-gradient gradient-animation">
-          {data.home.welcome}
+          {data?.home?.welcome}
         </p>
         <SearchBar
           searchText={searchText}

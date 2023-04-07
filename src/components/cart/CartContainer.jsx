@@ -9,14 +9,14 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useApp } from "../../context/AppContext";
 
 const CartContainer = () => {
-  const { data } = useLanguage();
+  const { data, language } = useLanguage();
 
   const { cart, totalAmount } = useApp();
-
+  const path = language === "english" ? "food" : "yemek";
   return (
     <>
       <header className="bg-white p-6 h-[10vh] flex text-bgBlack justify-between items-center">
-        <Link to={`/menu/${data?.categories[0]?.type}`}>
+        <Link to={`/menu/${path}`}>
           <MdKeyboardBackspace className="text-2xl" />
         </Link>
         <h1 className="text-xl font-semibold"> {data?.cart?.cart}</h1>
@@ -24,8 +24,8 @@ const CartContainer = () => {
       </header>
       <section className="bg-bgBlack h-[90vh] overflow-y-scroll scrollbar-hide rounded-t-3xl p-6 pb-1">
         <section className="flex flex-col gap-4 h-[77%] overflow-y-scroll scrollbar-hide">
-          {cart.length ? (
-            cart.map(({ image, price, quantity, name, id }) => {
+          {cart?.length ? (
+            cart?.map(({ image, price, quantity, name, id }) => {
               return (
                 <CartItem
                   image={image}

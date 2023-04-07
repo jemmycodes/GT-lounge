@@ -9,7 +9,7 @@ const SearchBar = ({ searchText, updateSearchText }) => {
       <input
         type="text"
         className=" w-full shadow-2xl bg-lang-card-color py-3 px-6 rounded-lg focus:border-gold focus:border-2 focus:outline-none text-gold"
-        placeholder={data.home.search}
+        placeholder={data?.home?.search}
         value={searchText}
         onChange={(e) => updateSearchText(e.target.value)}
       />
